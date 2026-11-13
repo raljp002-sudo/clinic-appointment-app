@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityHealth Clinic - Appointment Request Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts: Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Google Material Top App Bar -->
+  <header class="app-bar" role="banner">
+    <div class="app-bar-content">
+      <div class="brand-group">
+        <!-- 2D Visual Element: CityHealth Pulse Logo (SVG) -->
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#E8F0FE" />
+            <path d="M18 8V28M8 18H28" stroke="#1A73E8" stroke-width="3.5" stroke-linecap="round" />
+            <circle cx="18" cy="18" r="3" fill="#188038" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">CityHealth Clinic</h1>
+          <span class="brand-subtitle">Patient Scheduling Portal</span>
+        </div>
+      </div>
+      <div class="app-bar-portal-label">
+        <span>Patient Portal</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-container" id="app-root">
+
+    <!-- ==========================================
+         SCREEN 1: CLINIC APPOINTMENT REQUEST FORM
+         ========================================== -->
+    <section id="form-screen" class="screen-view active" aria-labelledby="form-heading">
+      <div class="md-card">
+        
+        <header class="card-header">
+          <h2 id="form-heading" class="card-title">Request an Appointment</h2>
+          <p class="card-subtitle">
+            Complete the form below to schedule a doctor consultation. Required fields are marked with <span class="required-asterisk" aria-hidden="true">*</span>.
+          </p>
+        </header>
+
+        <form id="appointment-form" novalidate autocomplete="off">
+          
+          <!-- Field Group 1: Patient Identity -->
+          <fieldset class="form-section">
+            <legend class="section-legend">1. Patient Information</legend>
+            
+            <!-- Full Name -->
+            <div class="form-field" id="field-group-fullName">
+              <label for="fullName" class="field-label">Full Name <span class="required-asterisk">*</span></label>
+              <div class="input-wrapper">
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  class="text-input" 
+                  placeholder="e.g., Maria Santos"
+                  required
+                  aria-required="true"
+                  aria-describedby="fullName-error"
+                >
+              </div>
+              <p class="field-message error-text" id="fullName-error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <!-- Email & Phone (Responsive 2-column on desktop) -->
+            <div class="form-row">
+              <!-- Email -->
+              <div class="form-field" id="field-group-email">
+                <label for="email" class="field-label">Email Address <span class="required-asterisk">*</span></label>
+                <div class="input-wrapper">
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="text-input" 
+                    placeholder="name@example.com"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error"
+                  >
+                </div>
+                <p class="field-message error-text" id="email-error" role="alert" aria-live="polite"></p>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-field" id="field-group-phone">
+                <label for="phone" class="field-label">Phone Number <span class="required-asterisk">*</span></label>
+                <div class="input-wrapper">
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    class="text-input" 
+                    placeholder="09171234567"
+                    required
+                    aria-required="true"
+                    aria-describedby="phone-error"
+                  >
+                </div>
+                <p class="field-message error-text" id="phone-error" role="alert" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Field Group 2: Appointment Details -->
+          <fieldset class="form-section">
+            <legend class="section-legend">2. Appointment Details</legend>
+            
+            <!-- Department Dropdown -->
+            <div class="form-field" id="field-group-department">
+              <label for="department" class="field-label">Clinic Department <span class="required-asterisk">*</span></label>
+              <div class="select-wrapper">
+                <select 
+                  id="department" 
+                  name="department" 
+                  class="select-input" 
+                  required
+                  aria-required="true"
+                  aria-describedby="department-error"
+                >
+                  <option value="" disabled selected>-- Select a Clinic Department --</option>
+                  <option value="General Medicine">General Medicine &amp; Primary Care</option>
+                  <option value="Pediatrics">Pediatrics (Child Healthcare)</option>
+                  <option value="Dental Care">Dental &amp; Oral Health</option>
+                  <option value="Dermatology">Dermatology (Skin Care)</option>
+                  <option value="Cardiology">Cardiology &amp; Heart Health</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">&#9662;</span>
+              </div>
+              <p class="field-message error-text" id="department-error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <!-- Date & Time Row -->
+            <div class="form-row">
+              <!-- Date Picker -->
+              <div class="form-field" id="field-group-appointmentDate">
+                <label for="appointmentDate" class="field-label">Preferred Date <span class="required-asterisk">*</span></label>
+                <div class="input-wrapper">
+                  <input 
+                    type="date" 
+                    id="appointmentDate" 
+                    name="appointmentDate" 
+                    class="text-input date-input"
+                    required
+                    aria-required="true"
+                    aria-describedby="appointmentDate-error"
+                  >
+                </div>
+                <p class="field-message error-text" id="appointmentDate-error" role="alert" aria-live="polite"></p>
+              </div>
+
+              <!-- Preferred Time Slot (Radio group - stacked cleanly matching sketch) -->
+              <div class="form-field" id="field-group-timeSlot">
+                <span class="field-label" id="timeSlot-group-label">Preferred Time Slot <span class="required-asterisk">*</span></span>
+                <div class="radio-group" role="radiogroup" aria-labelledby="timeSlot-group-label">
+                  <label class="radio-item" for="slot-morning">
+                    <input type="radio" id="slot-morning" name="timeSlot" value="Morning (09:00 AM - 12:00 PM)">
+                    <span class="custom-radio" aria-hidden="true"></span>
+                    <span class="radio-text">Morning (09:00 AM - 12:00 PM)</span>
+                  </label>
+
+                  <label class="radio-item" for="slot-afternoon">
+                    <input type="radio" id="slot-afternoon" name="timeSlot" value="Afternoon (01:00 PM - 05:00 PM)">
+                    <span class="custom-radio" aria-hidden="true"></span>
+                    <span class="radio-text">Afternoon (01:00 PM - 05:00 PM)</span>
+                  </label>
+                </div>
+                <p class="field-message error-text" id="timeSlot-error" role="alert" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <!-- Reason for Visit (Textarea) -->
+            <div class="form-field" id="field-group-reason">
+              <div class="label-with-counter">
+                <label for="reason" class="field-label">Reason for Visit / Symptoms <span class="optional-badge">(Optional)</span></label>
+                <span class="char-counter" id="reason-counter">0 / 300</span>
+              </div>
+              <div class="textarea-wrapper">
+                <textarea 
+                  id="reason" 
+                  name="reason" 
+                  class="textarea-input" 
+                  rows="3" 
+                  maxlength="300"
+                  placeholder="Briefly describe your symptoms or reason for scheduling..."
+                  aria-describedby="reason-error"
+                ></textarea>
+              </div>
+              <p class="field-message error-text" id="reason-error" role="alert" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- Field Group 3: Confirmation Terms -->
+          <fieldset class="form-section terms-section">
+            <div class="form-field checkbox-field" id="field-group-consent">
+              <label class="checkbox-label" for="consent">
+                <input 
+                  type="checkbox" 
+                  id="consent" 
+                  name="consent" 
+                  class="checkbox-input"
+                  required
+                  aria-required="true"
+                  aria-describedby="consent-error"
+                >
+                <span class="custom-checkbox" aria-hidden="true"></span>
+                <span class="checkbox-text">
+                  I acknowledge the clinic's cancellation and appointment confirmation policies. <span class="required-asterisk">*</span>
+                </span>
+              </label>
+              <p class="field-message error-text" id="consent-error" role="alert" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- Submit Button (Full width matching sketch) -->
+          <div class="form-actions">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-full">
+              <span class="btn-text">Confirm &amp; Request Appointment</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SCREEN 2: SUPPORTING SCREEN (CONFIRMATION)
+         ========================================== -->
+    <section id="confirmation-screen" class="screen-view hidden" aria-labelledby="confirmation-heading">
+      <div class="md-card confirmation-card">
+        
+        <!-- Success State 2D Visual Badge -->
+        <div class="confirmation-badge-container">
+          <div class="success-badge-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="32" fill="#E6F4EA" />
+              <circle cx="32" cy="32" r="22" fill="#188038" />
+              <path d="M22 32 L29 39 L43 25" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h2 id="confirmation-heading" class="confirmation-title">Appointment Confirmed!</h2>
+          <p class="confirmation-subtitle">
+            Your appointment request has been recorded. Please arrive 15 minutes before your scheduled slot.
+          </p>
+          <div class="reference-chip">
+            <span class="ref-label">Reference ID:</span>
+            <span class="ref-value" id="summary-referenceId">#APT-2026-0000</span>
+          </div>
+        </div>
+
+        <!-- Appointment Details Summary Table / Box -->
+        <div class="summary-details-box">
+          <div class="summary-row">
+            <div class="summary-col">
+              <span class="summary-label">Patient Name</span>
+              <strong class="summary-data" id="summary-name">—</strong>
+            </div>
+            <div class="summary-col">
+              <span class="summary-label">Clinic Department</span>
+              <strong class="summary-data" id="summary-department">—</strong>
+            </div>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row">
+            <div class="summary-col">
+              <span class="summary-label">Appointment Date</span>
+              <strong class="summary-data" id="summary-date">—</strong>
+            </div>
+            <div class="summary-col">
+              <span class="summary-label">Time Window</span>
+              <strong class="summary-data" id="summary-time">—</strong>
+            </div>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row">
+            <div class="summary-col">
+              <span class="summary-label">Contact Details</span>
+              <span class="summary-data" id="summary-contact">—</span>
+            </div>
+            <div class="summary-col">
+              <span class="summary-label">Booking Status</span>
+              <span class="status-pill status-pill-active">
+                <span class="pulse-indicator"></span> Confirmed &amp; Queued
+              </span>
+            </div>
+          </div>
+
+          <div class="summary-divider" id="summary-reason-divider"></div>
+
+          <div class="summary-row" id="summary-reason-row">
+            <div class="summary-col full-width">
+              <span class="summary-label">Patient Notes / Reason</span>
+              <p class="summary-notes" id="summary-reason">None provided</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation Actions -->
+        <div class="confirmation-actions">
+          <button type="button" id="book-another-btn" class="btn btn-outline">
+            &larr; Book Another Appointment
+          </button>
+          <button type="button" id="print-summary-btn" class="btn btn-primary">
+            Print / Save Summary
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 CityHealth Patient Care Services &bull; Built with Google Material Design 3</p>
+  </footer>
+
+  <!-- Google Material Design 3 Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="assertive" role="region" aria-label="Notifications"></div>
+
+  <!-- Script will be hooked up in Step 4 -->
+  <script src="script.js"></script>
+</body>
+</html>

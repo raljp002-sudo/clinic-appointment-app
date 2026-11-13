@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 840" width="1280" height="840" style="background:#F8FAFD; font-family:'Roboto', 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#1F1F1F" flood-opacity="0.08" />
+    </filter>
+    
+    <!-- Marker Arrows -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1A73E8" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#188038" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#B06000" />
+    </marker>
+  </defs>
+
+  <!-- ========================================================
+       TOP HEADER BAR
+       ======================================================== -->
+  <rect x="0" y="0" width="1280" height="68" fill="#FFFFFF" />
+  <line x1="0" y1="68" x2="1280" y2="68" stroke="#DADCE0" stroke-width="1" />
+  
+  <g transform="translate(48, 14)">
+    <rect width="40" height="40" rx="8" fill="#E8F0FE" />
+    <path d="M20 10 V30 M10 20 H30" stroke="#1A73E8" stroke-width="4" stroke-linecap="round" />
+    <circle cx="20" cy="20" r="3" fill="#188038" />
+  </g>
+  <text x="104" y="38" fill="#1F1F1F" font-size="20" font-weight="700">CityHealth Clinic - MVC Architecture Diagram</text>
+  <text x="104" y="56" fill="#5F6368" font-size="12">Structured Separation of Concerns: Model, View, and Controller Flow</text>
+  <text x="1100" y="42" fill="#1A73E8" font-size="13" font-weight="600">HCI Activity - Step 5</text>
+
+  <!-- ========================================================
+       USER ACTOR BADGE (Top Center)
+       ======================================================== -->
+  <g transform="translate(500, 96)" filter="url(#card-shadow)">
+    <rect width="280" height="52" rx="26" fill="#1F1F1F" />
+    <!-- User Icon -->
+    <circle cx="36" cy="26" r="10" fill="#E8F0FE" />
+    <path d="M22 42 C22 34, 30 33, 36 33 C42 33, 50 34, 50 42" fill="#E8F0FE" />
+    <text x="156" y="32" fill="#FFFFFF" font-size="15" font-weight="600" text-anchor="middle">USER (PATIENT)</text>
+  </g>
+
+  <!-- ========================================================
+       CONNECTIONS: USER <-> CONTROLLER & VIEW
+       ======================================================== -->
+  <!-- User to Controller Arrow -->
+  <path d="M 500 122 L 416 122" fill="none" stroke="#B06000" stroke-width="2" marker-end="url(#arrow-amber)" />
+  <g transform="translate(422, 94)">
+    <rect width="72" height="20" rx="4" fill="#FEF7E0" />
+    <text x="36" y="14" fill="#B06000" font-size="10" font-weight="600" text-anchor="middle">User Events</text>
+  </g>
+
+  <!-- View to User Arrow -->
+  <path d="M 864 122 L 780 122" fill="none" stroke="#188038" stroke-width="2" marker-end="url(#arrow-green)" />
+  <g transform="translate(786, 94)">
+    <rect width="72" height="20" rx="4" fill="#E6F4EA" />
+    <text x="36" y="14" fill="#188038" font-size="10" font-weight="600" text-anchor="middle">UI Feedback</text>
+  </g>
+
+  <!-- ========================================================
+       CONTROLLER TO VIEW DIRECT COMMAND (Horizontal Bridge)
+       ======================================================== -->
+  <path d="M 410 220 L 864 220" fill="none" stroke="#1A73E8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-blue)" />
+  <g transform="translate(485, 202)">
+    <rect width="310" height="34" rx="8" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1" filter="url(#card-shadow)" />
+    <text x="155" y="21" fill="#1A73E8" font-size="11.5" font-weight="600" text-anchor="middle">
+      Commands View: <tspan fill="#444746" font-weight="400">showToast(), render(), switchScreen()</tspan>
+    </text>
+  </g>
+
+  <!-- ========================================================
+       1. CONTROLLER CARD (Left Column)
+       ======================================================== -->
+  <g transform="translate(48, 100)" filter="url(#card-shadow)">
+    <rect width="360" height="690" rx="16" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1" />
+    
+    <!-- Card Header Banner -->
+    <rect width="360" height="52" rx="16" fill="#FEF7E0" />
+    <line x1="0" y1="52" x2="360" y2="52" stroke="#FBBC04" stroke-width="2" />
+    <text x="20" y="33" fill="#B06000" font-size="17" font-weight="700">CONTROLLER</text>
+    <text x="240" y="32" fill="#747775" font-size="11">script.js (Lines 302-450)</text>
+
+    <!-- Subtitle -->
+    <text x="20" y="78" fill="#1F1F1F" font-size="13" font-weight="600">Event Coordination &amp; Workflow Logic</text>
+
+    <!-- Section: Event Handlers -->
+    <g transform="translate(20, 102)">
+      <text x="0" y="0" fill="#B06000" font-size="11.5" font-weight="700" letter-spacing="0.5">REGISTERED EVENT HANDLERS</text>
+      
+      <g transform="translate(0, 14)">
+        <text x="0" y="14" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleFormSubmit(e)</text>
+        <text x="180" y="14" fill="#5F6368" font-size="10.5">[Event: &apos;submit&apos;]</text>
+
+        <text x="0" y="34" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleFieldBlur(e)</text>
+        <text x="180" y="34" fill="#5F6368" font-size="10.5">[Event: &apos;blur&apos;]</text>
+
+        <text x="0" y="54" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleFieldInput(e)</text>
+        <text x="180" y="54" fill="#5F6368" font-size="10.5">[Event: &apos;input&apos;]</text>
+
+        <text x="0" y="74" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleRadioChange()</text>
+        <text x="180" y="74" fill="#5F6368" font-size="10.5">[Event: &apos;change&apos;]</text>
+
+        <text x="0" y="94" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleConsentChange()</text>
+        <text x="180" y="94" fill="#5F6368" font-size="10.5">[Event: &apos;change&apos;]</text>
+
+        <text x="0" y="114" fill="#1F1F1F" font-size="11.5" font-weight="500">- handleBookAnotherClick()</text>
+        <text x="180" y="114" fill="#5F6368" font-size="10.5">[Event: &apos;click&apos;]</text>
+
+        <text x="0" y="134" fill="#1F1F1F" font-size="11.5" font-weight="500">- handlePrintSummaryClick()</text>
+        <text x="180" y="134" fill="#5F6368" font-size="10.5">[Event: &apos;click&apos;]</text>
+      </g>
+    </g>
+
+    <line x1="20" y1="264" x2="340" y2="264" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Section: Workflow Methods -->
+    <g transform="translate(20, 286)">
+      <text x="0" y="0" fill="#B06000" font-size="11.5" font-weight="700" letter-spacing="0.5">COORDINATION METHODS</text>
+      <text x="0" y="20" fill="#1F1F1F" font-size="11.5">- Controller.hasSubmitted (State Flag)</text>
+      <text x="0" y="38" fill="#1F1F1F" font-size="11.5">- getFormData() [extracts values]</text>
+      <text x="0" y="56" fill="#1F1F1F" font-size="11.5">- validateSingleField(fieldName)</text>
+      <text x="0" y="74" fill="#1F1F1F" font-size="11.5">- validateAll() [runs full check]</text>
+      <text x="0" y="92" fill="#1F1F1F" font-size="11.5">- init() [binds all DOM listeners]</text>
+    </g>
+
+    <line x1="20" y1="398" x2="340" y2="398" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Section: HCI Responsibilities -->
+    <g transform="translate(20, 420)">
+      <text x="0" y="0" fill="#5F6368" font-size="11.5" font-weight="700">CORE RESPONSIBILITY</text>
+      <rect x="0" y="10" width="320" height="96" rx="8" fill="#F8FAFD" stroke="#DADCE0" stroke-width="1" />
+      <text x="12" y="30" fill="#444746" font-size="11">1. Receives DOM events from user actions.</text>
+      <text x="12" y="48" fill="#444746" font-size="11">2. Invokes e.preventDefault() on submit.</text>
+      <text x="12" y="66" fill="#444746" font-size="11">3. Queries Model validation functions.</text>
+      <text x="12" y="84" fill="#444746" font-size="11">4. Dispatches feedback commands to View.</text>
+    </g>
+  </g>
+
+  <!-- ========================================================
+       2. MODEL CARD (Middle Column)
+       ======================================================== -->
+  <g transform="translate(460, 276)" filter="url(#card-shadow)">
+    <rect width="360" height="514" rx="16" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1" />
+    
+    <!-- Card Header Banner -->
+    <rect width="360" height="52" rx="16" fill="#E8F0FE" />
+    <line x1="0" y1="52" x2="360" y2="52" stroke="#1A73E8" stroke-width="2" />
+    <text x="20" y="33" fill="#1A73E8" font-size="17" font-weight="700">MODEL</text>
+    <text x="240" y="32" fill="#747775" font-size="11">script.js (Lines 20-145)</text>
+
+    <!-- Subtitle -->
+    <text x="20" y="78" fill="#1F1F1F" font-size="13" font-weight="600">In-Memory State &amp; Validation Logic</text>
+
+    <!-- State Store -->
+    <g transform="translate(20, 102)">
+      <text x="0" y="0" fill="#1A73E8" font-size="11.5" font-weight="700" letter-spacing="0.5">STATE &amp; DATA STORE</text>
+      <text x="0" y="20" fill="#1F1F1F" font-size="11.5">- currentAppointment (Active Record)</text>
+      <text x="0" y="38" fill="#1F1F1F" font-size="11.5">- appointments[] (Store Array)</text>
+      <text x="0" y="56" fill="#1F1F1F" font-size="11.5">- generateReferenceId() (#APT-2026-XXXX)</text>
+      <text x="0" y="74" fill="#1F1F1F" font-size="11.5">- saveAppointment(formData)</text>
+    </g>
+
+    <line x1="20" y1="194" x2="340" y2="194" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Validation Rules -->
+    <g transform="translate(20, 214)">
+      <text x="0" y="0" fill="#1A73E8" font-size="11.5" font-weight="700" letter-spacing="0.5">PURE VALIDATION RULES</text>
+      <text x="0" y="18" fill="#444746" font-size="11">- validators.fullName: min 3 chars, letters only</text>
+      <text x="0" y="34" fill="#444746" font-size="11">- validators.email: standard email regex</text>
+      <text x="0" y="50" fill="#444746" font-size="11">- validators.phone: 10 to 11 numeric digits</text>
+      <text x="0" y="66" fill="#444746" font-size="11">- validators.department: non-empty selection</text>
+      <text x="0" y="82" fill="#444746" font-size="11">- validators.appointmentDate: tomorrow or later</text>
+      <text x="0" y="98" fill="#444746" font-size="11">- validators.timeSlot: Morning or Afternoon</text>
+      <text x="0" y="114" fill="#444746" font-size="11">- validators.consent: mandatory policy checkbox</text>
+      <text x="0" y="130" fill="#444746" font-size="11">- validators.reason: optional, max 300 chars</text>
+    </g>
+
+    <line x1="20" y1="362" x2="340" y2="362" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Core Responsibility -->
+    <g transform="translate(20, 382)">
+      <text x="0" y="0" fill="#5F6368" font-size="11.5" font-weight="700">CORE RESPONSIBILITY</text>
+      <rect x="0" y="10" width="320" height="60" rx="8" fill="#F8FAFD" stroke="#DADCE0" stroke-width="1" />
+      <text x="12" y="28" fill="#444746" font-size="11">Holds clean domain data without UI logic.</text>
+      <text x="12" y="46" fill="#444746" font-size="11">Guarantees data integrity before persistence.</text>
+    </g>
+  </g>
+
+  <!-- ========================================================
+       3. VIEW CARD (Right Column)
+       ======================================================== -->
+  <g transform="translate(872, 100)" filter="url(#card-shadow)">
+    <rect width="360" height="690" rx="16" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1" />
+    
+    <!-- Card Header Banner -->
+    <rect width="360" height="52" rx="16" fill="#E6F4EA" />
+    <line x1="0" y1="52" x2="360" y2="52" stroke="#188038" stroke-width="2" />
+    <text x="20" y="33" fill="#188038" font-size="17" font-weight="700">VIEW</text>
+    <text x="230" y="32" fill="#747775" font-size="11">script.js (Lines 147-300)</text>
+
+    <!-- Subtitle -->
+    <text x="20" y="78" fill="#1F1F1F" font-size="13" font-weight="600">DOM Rendering, Screens &amp; Feedback</text>
+
+    <!-- DOM Screen Templates -->
+    <g transform="translate(20, 102)">
+      <text x="0" y="0" fill="#188038" font-size="11.5" font-weight="700" letter-spacing="0.5">DOM VIEW SCREENS &amp; ELEMENTS</text>
+      <text x="0" y="18" fill="#1F1F1F" font-size="11.5">- Screen 1: &apos;#form-screen&apos; (Form &amp; Cards)</text>
+      <text x="0" y="36" fill="#1F1F1F" font-size="11.5">- Screen 2: &apos;#confirmation-screen&apos; (Summary)</text>
+      <text x="0" y="54" fill="#1F1F1F" font-size="11.5">- Toast: &apos;#toast-container&apos; (Material Pill)</text>
+      <text x="0" y="72" fill="#1F1F1F" font-size="11.5">- View.elements: cached DOM selectors</text>
+    </g>
+
+    <line x1="20" y1="194" x2="340" y2="194" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Presentation Methods -->
+    <g transform="translate(20, 214)">
+      <text x="0" y="0" fill="#188038" font-size="11.5" font-weight="700" letter-spacing="0.5">RENDERING &amp; FEEDBACK METHODS</text>
+      <text x="0" y="18" fill="#444746" font-size="11">- showFieldError(field, msg): red outline/text</text>
+      <text x="0" y="36" fill="#444746" font-size="11">- clearFieldError(field): removes error state</text>
+      <text x="0" y="54" fill="#444746" font-size="11">- showToast(msg, type): floating MD3 snackbar</text>
+      <text x="0" y="72" fill="#444746" font-size="11">- dismissToast(toast): smooth exit animation</text>
+      <text x="0" y="90" fill="#444746" font-size="11">- updateCharCounter(len): updates &apos;X / 300&apos;</text>
+      <text x="0" y="108" fill="#444746" font-size="11">- formatFriendlyDate(dateStr): readable date</text>
+      <text x="0" y="126" fill="#444746" font-size="11">- renderConfirmation(data): fills summary card</text>
+      <text x="0" y="144" fill="#444746" font-size="11">- switchScreen(name): toggles screen view</text>
+      <text x="0" y="162" fill="#444746" font-size="11">- resetForm(): clears all inputs and markers</text>
+    </g>
+
+    <line x1="20" y1="398" x2="340" y2="398" stroke="#E0E3E7" stroke-width="1" />
+
+    <!-- Core Responsibility -->
+    <g transform="translate(20, 420)">
+      <text x="0" y="0" fill="#5F6368" font-size="11.5" font-weight="700">CORE RESPONSIBILITY</text>
+      <rect x="0" y="10" width="320" height="96" rx="8" fill="#F8FAFD" stroke="#DADCE0" stroke-width="1" />
+      <text x="12" y="30" fill="#444746" font-size="11">1. Displays visual screens and input elements.</text>
+      <text x="12" y="48" fill="#444746" font-size="11">2. Renders plain-language validation alerts.</text>
+      <text x="12" y="66" fill="#444746" font-size="11">3. Animates Google MD3 Toast notifications.</text>
+      <text x="12" y="84" fill="#444746" font-size="11">4. Formats data for patient confirmation view.</text>
+    </g>
+  </g>
+
+  <!-- ========================================================
+       INTER-CARD DATA ARROWS (Cleanly positioned with NO crossing)
+       ======================================================== -->
+  <!-- Controller to Model: Validate & Save -->
+  <path d="M 408 410 L 460 410" fill="none" stroke="#1A73E8" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  <text x="434" y="402" fill="#1A73E8" font-size="10" font-weight="700" text-anchor="middle">Validate</text>
+
+  <!-- Model to Controller: Results & Records -->
+  <path d="M 460 470 L 408 470" fill="none" stroke="#1A73E8" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  <text x="434" y="488" fill="#1A73E8" font-size="10" font-weight="700" text-anchor="middle">Returns</text>
+
+  <!-- Model to View: Data Binding -->
+  <path d="M 820 440 L 872 440" fill="none" stroke="#188038" stroke-width="2.5" marker-end="url(#arrow-green)" />
+  <text x="846" y="432" fill="#188038" font-size="10" font-weight="700" text-anchor="middle">Data</text>
+
+</svg>

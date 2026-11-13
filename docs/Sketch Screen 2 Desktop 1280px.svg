@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 940" width="1280" height="940" style="background:#F0F4F9; font-family:'Roboto', 'Google Sans', -apple-system, sans-serif;">
+  <defs>
+    <filter id="conf-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#1F1F1F" flood-opacity="0.09" />
+    </filter>
+  </defs>
+
+  <!-- Google Material Top App Bar -->
+  <rect x="0" y="0" width="1280" height="64" fill="#FFFFFF" />
+  <line x1="0" y1="64" x2="1280" y2="64" stroke="#DADCE0" stroke-width="1" />
+  
+  <!-- Brand Logo & Title -->
+  <g transform="translate(64, 14)">
+    <rect width="36" height="36" rx="8" fill="#E8F0FE" />
+    <path d="M18 8 V28 M8 18 H28" stroke="#1A73E8" stroke-width="3.5" stroke-linecap="round" />
+    <circle cx="18" cy="18" r="3" fill="#188038" />
+  </g>
+  <text x="112" y="32" fill="#1F1F1F" font-size="18" font-weight="700">CityHealth Clinic</text>
+  <text x="112" y="48" fill="#444746" font-size="12">Patient Scheduling Portal</text>
+  <text x="1110" y="38" fill="#444746" font-size="14" font-weight="500">Patient Portal</text>
+
+  <!-- Screen 2: Confirmation Card Container -->
+  <g transform="translate(300, 96)" filter="url(#conf-shadow)">
+    <rect width="680" height="780" rx="20" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1" />
+
+    <!-- Success Checkmark Badge (2D Visual Element in success state) -->
+    <g transform="translate(308, 40)">
+      <circle cx="32" cy="32" r="32" fill="#E6F4EA" />
+      <circle cx="32" cy="32" r="22" fill="#188038" />
+      <path d="M22 32 L29 39 L43 25" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+    <!-- Confirmation Heading & Subtitle -->
+    <text x="340" y="132" fill="#1F1F1F" font-size="24" font-weight="700" text-anchor="middle">Appointment Confirmed!</text>
+    <text x="340" y="158" fill="#444746" font-size="14" text-anchor="middle">Your appointment request has been recorded. Please arrive 15 minutes before your scheduled slot.</text>
+
+    <!-- Reference ID Pill -->
+    <g transform="translate(230, 182)">
+      <rect width="220" height="34" rx="17" fill="#E8F0FE" />
+      <text x="110" y="22" fill="#041E49" font-size="13" font-weight="500" text-anchor="middle">
+        Reference ID: <tspan font-weight="700">#APT-2026-8841</tspan>
+      </text>
+    </g>
+
+    <!-- Summary Details Box -->
+    <g transform="translate(48, 236)">
+      <rect width="584" height="390" rx="12" fill="#F8FAFD" stroke="#DADCE0" stroke-width="1" />
+      
+      <!-- Row 1: Patient Name & Department -->
+      <g transform="translate(24, 28)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">PATIENT NAME</text>
+        <text x="0" y="22" fill="#1F1F1F" font-size="15" font-weight="600">Maria Santos</text>
+      </g>
+      <g transform="translate(300, 28)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">CLINIC DEPARTMENT</text>
+        <text x="0" y="22" fill="#1F1F1F" font-size="15" font-weight="600">General Medicine &amp; Primary Care</text>
+      </g>
+
+      <line x1="24" y1="72" x2="560" y2="72" stroke="#DADCE0" stroke-width="1" />
+
+      <!-- Row 2: Date & Time Window -->
+      <g transform="translate(24, 102)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">APPOINTMENT DATE</text>
+        <text x="0" y="22" fill="#1F1F1F" font-size="15" font-weight="600">Friday, Nov 20, 2026</text>
+      </g>
+      <g transform="translate(300, 102)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">TIME WINDOW</text>
+        <text x="0" y="22" fill="#1F1F1F" font-size="15" font-weight="600">Morning (09:00 AM - 12:00 PM)</text>
+      </g>
+
+      <line x1="24" y1="148" x2="560" y2="148" stroke="#DADCE0" stroke-width="1" />
+
+      <!-- Row 3: Contact Details & Status -->
+      <g transform="translate(24, 178)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">CONTACT DETAILS</text>
+        <text x="0" y="22" fill="#1F1F1F" font-size="14">name@example.com | 09171234567</text>
+      </g>
+      <g transform="translate(300, 178)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">BOOKING STATUS</text>
+        <g transform="translate(0, 10)">
+          <circle cx="6" cy="10" r="4.5" fill="#188038" />
+          <text x="18" y="14" fill="#188038" font-size="13" font-weight="600">Confirmed &amp; Queued</text>
+        </g>
+      </g>
+
+      <line x1="24" y1="228" x2="560" y2="228" stroke="#DADCE0" stroke-width="1" />
+
+      <!-- Row 4: Patient Notes / Reason -->
+      <g transform="translate(24, 256)">
+        <text x="0" y="0" fill="#747775" font-size="11" font-weight="600" letter-spacing="0.5">PATIENT NOTES / REASON</text>
+        <rect x="0" y="10" width="536" height="52" rx="6" fill="#FFFFFF" stroke="#E0E3E7" stroke-width="1" />
+        <text x="14" y="40" fill="#444746" font-size="13">Routine annual physical examination and health check-up.</text>
+      </g>
+    </g>
+
+    <!-- Action Buttons (Google MD3 Pill Layout) -->
+    <g transform="translate(48, 656)">
+      <!-- Left: Book Another Appointment (Outlined) -->
+      <rect x="0" y="0" width="280" height="48" rx="24" fill="#FFFFFF" stroke="#747775" stroke-width="1" />
+      <text x="140" y="29" fill="#1A73E8" font-size="14" font-weight="600" text-anchor="middle">&#8592; Book Another Appointment</text>
+
+      <!-- Right: Print / Save Summary (Google Blue Primary) -->
+      <rect x="304" y="0" width="280" height="48" rx="24" fill="#1A73E8" />
+      <text x="444" y="29" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Print / Save Summary</text>
+    </g>
+  </g>
+</svg>
