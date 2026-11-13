@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Deliverables Directory & Submission Map
+## Deliverables Directory & Submission Map
 
 All deliverables required by the activity instructions and grading rubric are organized inside this repository:
 
@@ -22,7 +22,7 @@ All deliverables required by the activity instructions and grading rubric are or
 
 ---
 
-## 🚀 How to Run the Application
+## How to Run the Application
 
 No build tools, npm packages, or server installations are required:
 
@@ -35,7 +35,7 @@ No build tools, npm packages, or server installations are required:
 
 ---
 
-## 👥 Group Roles & Responsibilities
+## Group Roles & Responsibilities
 
 | Role | Responsibilities Fulfilled |
 | :--- | :--- |
@@ -45,15 +45,3 @@ No build tools, npm packages, or server installations are required:
 | **Documenter** | Field table, MVC architecture diagram, Word documents generation (`.docx`), test notes, and 3-minute demo script. |
 
 ---
-
-## 💯 Grading Criteria Alignment (100 Points)
-
-| Criteria | Points | Deliverable Files Proving Completion |
-| :--- | :---: | :--- |
-| **Planning:** sketches, field table, and pattern choices | **15 pts** | `docs/Design_Documents.docx`, `docs/planning_and_design.md`, and 4 vector SVG sketches. |
-| **Form and interface quality:** labels, grouping, controls, validation, visual consistency, 2D element | **20 pts** | `index.html` & `styles.css` (Google MD3 styling, fieldsets, required asterisks, 2D vector logo). |
-| **Events and handlers:** at least three working handlers with helpful messages | **20 pts** | `script.js` & `docs/step4_events_and_handlers.md` (7 handlers, 5 event types, `preventDefault`, floating Toast). |
-| **MVC organization and diagram** | **15 pts** | `docs/mvc_diagram.svg`, `docs/mvc_architecture.md`, and `script.js` (clear Model, View, Controller separation). |
-| **Responsiveness:** usable at phone and desktop widths | **15 pts** | `styles.css` breakpoints (`600px`, `1024px`) verified at 360px, 768px, and 1280px. |
-| **Testing and demo:** problems found and fixed, clear recording | **15 pts** | `docs/Test_Notes.docx`, `docs/test_notes.md`, and `docs/Demo_Script_Step7.docx`. |
-| **Total** | **100 pts** | **All requirements achieved.** |
